@@ -1,0 +1,57 @@
+{
+  "name": "preact-state-testing-showcase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost:8080",
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^.{1,2}/style$": "identity-obj-proxy",
+      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js",
+      "^react$": "preact-compat",
+      "^react-dom$": "preact-compat",
+      "^create-react-class$": "preact-compat/lib/create-react-class",
+      "^react-addons-css-transition-group$": "preact-css-transition-group"
+    }
+  },
+  "scripts": {
+    "test-old": "eslint src && preact test",
+    "test": "jest --no-cache",
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "eslint-config-synacor",
+    "env": {
+      "jest": true
+    }
+  },
+  "devDependencies": {
+    "jest": "22.0.4",
+    "babel-jest": "22.0.4",
+    "eslint": "4.15.0",
+    "eslint-config-synacor": "2.0.4",
+    "identity-obj-proxy": "3.0.0",
+    "if-env": "1.0.0",
+    "preact-cli": "2.1.0",
+    "preact-render-spy": "1.2.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-regenerator": "6.26.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "preact": "8.2.7",
+    "preact-compat": "3.17.0",
+    "preact-router": "2.6.0"
+  }
+}

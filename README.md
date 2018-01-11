@@ -4,11 +4,11 @@ React patterns for fun and profit
 This is the basis for a blogpost published on the Zalando Tech blog.
 
 Bulding and running the project with npm (5.5 onwards) is as simple as:
-
+```
   npm install
   npm run dev
   npm run test
-
+```
 Prerequisites
 -------------
 

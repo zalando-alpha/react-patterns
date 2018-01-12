@@ -4,10 +4,11 @@ React patterns for fun and profit
 This is the basis for a blogpost published on the Zalando Tech blog.
 
 Bulding and running the project with npm (5.5 onwards) is as simple as:
-
+```
   npm install
   npm run dev
   npm run test
+```
 
 
 Table of contents
@@ -20,7 +21,6 @@ Table of contents
 * [Service Pattern (S Pattern)](#service-pattern--s-pattern-)
 * [Connector Service Pattern (CS Pattern)](#connector-service-pattern--cs-pattern-)
 
-
 Prerequisites
 -------------
 
@@ -30,6 +30,7 @@ The examples are based on preact, jest and preact-render-spy, but preact is basi
 Example project with tests can be found [here](https://github.com/zalando-alpha/react-patterns).
 
 A note of warning: While we found the following patterns to be useful - we are super interested in getting your feedback.
+
 
 Introduction
 ------------

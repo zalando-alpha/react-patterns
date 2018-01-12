@@ -16,10 +16,10 @@ Table of contents
 
 * [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
-* [SmartComponent / DumbComponent Pattern (SD Pattern)](#smartcomponent---dumbcomponent-pattern--sd-pattern-)
-* [Props Instance Pattern (PI Pattern)](#props-instance-pattern--pi-pattern-)
-* [Service Pattern (S Pattern)](#service-pattern--s-pattern-)
-* [Connector Service Pattern (CS Pattern)](#connector-service-pattern--cs-pattern-)
+* [SmartComponent / DumbComponent Pattern (SD Pattern)](#smartcomponent--dumbcomponent-pattern-sd-pattern)
+* [Props Instance Pattern (PI Pattern)](#props-instance-pattern-pi-pattern)
+* [Service Pattern (S Pattern)](#service-pattern-s-pattern)
+* [Connector Service Pattern (CS Pattern)](#connector-service-pattern-cs-pattern)
 
 Prerequisites
 -------------

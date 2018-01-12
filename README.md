@@ -9,6 +9,18 @@ Bulding and running the project with npm (5.5 onwards) is as simple as:
   npm run dev
   npm run test
 
+
+Table of contents
+-----------------
+
+* [Prerequisites](#prerequisites)
+* [Introduction](#introduction)
+* [SmartComponent / DumbComponent Pattern (SD Pattern)](#smartcomponent---dumbcomponent-pattern--sd-pattern-)
+* [Props Instance Pattern (PI Pattern)](#props-instance-pattern--pi-pattern-)
+* [Service Pattern (S Pattern)](#service-pattern--s-pattern-)
+* [Connector Service Pattern (CS Pattern)](#connector-service-pattern--cs-pattern-)
+
+
 Prerequisites
 -------------
 

@@ -1,11 +1,10 @@
 import { deep } from 'preact-render-spy';
-import TodoService from '../../src/lib/TodoService';
+import { todoService } from '../../src/lib/TodoService';
 
 describe('TodoService', () => {
 
   it('getTodos should work', () => {
     // GIVEN
-    const todoService = new TodoService();
 
     // WHEN
     const result = todoService.getTodos();

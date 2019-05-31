@@ -2,10 +2,12 @@ import { h, Component } from 'preact';
 import TodoTable from './TodoTable';
 import style from './style';
 
+
+import { todoService } from "../../lib/TodoService";
+
 export default class TodoSmartComponent extends Component {
   constructor(props) {
     super(props);
-    this.todoService = props.todoService;
     this.state = {
       todos: []
     };
@@ -23,7 +25,7 @@ export default class TodoSmartComponent extends Component {
     const copiedSelectedTodoItem = Object.assign({}, selectedTodoItem);
     copiedSelectedTodoItem.done = !selectedTodoItem.done;
 
-    this.todoService.updateTodoItem(copiedSelectedTodoItem);
+    todoService.updateTodoItem(copiedSelectedTodoItem);
     this._loadData();
 
     this.notificationMoleConnectorService.showNotification("Changed checkbox value.");
@@ -32,7 +34,7 @@ export default class TodoSmartComponent extends Component {
   showInputField = () => {
     const newTodoText = window.prompt("New Todo:", "");
     if (newTodoText !== null && newTodoText !== "") {
-      this.todoService.createNewTodo(newTodoText);
+      todoService.createNewTodo(newTodoText);
       // simply reload everything...
       this._loadData();
       this.notificationMoleConnectorService.showNotification("Item created!");
@@ -40,7 +42,7 @@ export default class TodoSmartComponent extends Component {
   }
 
   _loadData() {
-    this.todos = this.todoService.getTodos();
+    this.todos = todoService.getTodos();
     this.setState({ todos: this.todos });
   }
 

@@ -13,7 +13,6 @@ export default class App extends Component {
 
   constructor() {
     super();
-    this.todoService = new TodoService();
     this.notificationMoleConnectorService = new NotificationMoleConnectorService();
   }
 
@@ -31,7 +30,7 @@ export default class App extends Component {
         <Header />
         <NotificationMole notificationMoleConnectorService={this.notificationMoleConnectorService} />
         <Router onChange={this.handleRoute}>
-          <TodoSmartComponent path="/todo" todoService={this.todoService} notificationMoleConnectorService={this.notificationMoleConnectorService} />
+          <TodoSmartComponent path="/todo" notificationMoleConnectorService={this.notificationMoleConnectorService} />
         </Router>
       </div>
     );

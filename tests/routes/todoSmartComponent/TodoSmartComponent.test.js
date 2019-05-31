@@ -1,5 +1,8 @@
 import { shallow } from 'preact-render-spy';
 import TodoSmartComponent from '../../../src/routes/todoSmartComponent/TodoSmartComponent';
+jest.mock('../../../src/lib/TodoService');
+import { todoService } from '../../../src/lib/TodoService';
+
 
 describe('TodoSmartComponent', () => {
 
@@ -15,16 +18,16 @@ describe('TodoSmartComponent', () => {
       "text": "call tax attorney",
     }];
 
-    const todoServiceMock = {
-      getTodos: jest.fn(() => dummyData)
-    };
+    todoService.getTodos = jest.fn(() => dummyData);
+
+    console.log(todoService);
 
     // WHEN
-    const todoSmartComponent = shallow(<TodoSmartComponent todoService={todoServiceMock} />)
+    const todoSmartComponent = shallow(<TodoSmartComponent />)
     await Promise.resolve(); // TODO: for a more nice version...
 
     // THEN
-    expect(todoServiceMock.getTodos).toBeCalled();
+    expect(todoService.getTodos).toBeCalled();
     expect(todoSmartComponent.find("TodoTable").length).toBe(1);
     expect(todoSmartComponent.find("TodoTable").attr("todos")).toBe(dummyData);
   });
@@ -44,20 +47,19 @@ describe('TodoSmartComponent', () => {
       "text": "call tax attorney",
     }];
 
-    const todoServiceMock = {
-      getTodos: jest.fn(() => dummyData),
-      updateTodoItem: jest.fn(() => [])
-    };
+    todoService.getTodos = jest.fn(() => dummyData);
+    todoService.updateTodoItem = jest.fn(() => []);
+
     const notificationMoleConnectorServiceMock = {
       showNotification: jest.fn()
     };
 
     // WHEN
-    const todoSmartComponent = shallow(<TodoSmartComponent todoService={todoServiceMock} notificationMoleConnectorService={notificationMoleConnectorServiceMock} />)
+    const todoSmartComponent = shallow(<TodoSmartComponent notificationMoleConnectorService={notificationMoleConnectorServiceMock} />)
     await Promise.resolve(); // TODO: for a more nice version...
 
     // THEN
-    expect(todoServiceMock.getTodos).toBeCalled();
+    expect(todoService.getTodos).toBeCalled();
     expect(todoSmartComponent.find("TodoTable").length).toBe(1);
     expect(todoSmartComponent.find("TodoTable").attr("todos")).toBe(dummyData);
 
@@ -70,7 +72,7 @@ describe('TodoSmartComponent', () => {
       "text": "buy butter",
       "done": false,
     }
-    expect(todoServiceMock.updateTodoItem).toBeCalledWith(expectedChangedItem);
+    expect(todoService.updateTodoItem).toBeCalledWith(expectedChangedItem);
   });
 
 });

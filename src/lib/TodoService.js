@@ -43,4 +43,4 @@ class TodoService {
 
 }
 
-export default TodoService;
+export const todoService = new TodoService();
